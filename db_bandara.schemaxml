@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">db_bandara</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="tb_admin" view="colnames">
+<left>49</left>
+<top>236</top>
+<width>120</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `tb_admin` (
+  `id_admin` int(10) NOT NULL,
+  `nama_admin` varchar(50) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(10) DEFAULT NULL,
+  `date_admin` datetime DEFAULT NULL,
+  `tipe` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="tb_mp" view="colnames">
+<left>243</left>
+<top>-7</top>
+<width>138</width>
+<height>214</height>
+<sql_create_table>CREATE TABLE `tb_mp` (
+  `id_mp` int(10) DEFAULT NULL,
+  `tgl_usulan` date DEFAULT NULL,
+  `nama_dokumen` varchar(50) DEFAULT NULL,
+  `unit_pengusul` varchar(50) DEFAULT NULL,
+  `file` varchar(50) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  `id_admin` int(10) DEFAULT NULL,
+  `id_user` int(10) DEFAULT NULL,
+  KEY `id_admin` (`id_admin`),
+  CONSTRAINT `tb_mp_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="tb_pedoman" view="colnames">
+<left>631</left>
+<top>-1</top>
+<width>138</width>
+<height>214</height>
+<sql_create_table>CREATE TABLE `tb_pedoman` (
+  `id_pedoman` int(10) DEFAULT NULL,
+  `tgl_usulan` date DEFAULT NULL,
+  `nama_dokumen` varchar(50) DEFAULT NULL,
+  `unit_pengusul` varchar(50) DEFAULT NULL,
+  `file` varchar(50) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  `id_admin` int(10) DEFAULT NULL,
+  `id_user` int(10) DEFAULT NULL,
+  KEY `id_admin` (`id_admin`),
+  CONSTRAINT `tb_pedoman_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="tb_prosedur_mutu" view="colnames">
+<left>270</left>
+<top>353</top>
+<width>138</width>
+<height>214</height>
+<sql_create_table>CREATE TABLE `tb_prosedur_mutu` (
+  `id_pm` int(10) DEFAULT NULL,
+  `tgl_usulan` date DEFAULT NULL,
+  `nama_dokumen` varchar(50) DEFAULT NULL,
+  `unit_pengusul` varchar(50) DEFAULT NULL,
+  `file` varchar(50) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  `id_admin` int(10) DEFAULT NULL,
+  `id_user` int(10) DEFAULT NULL,
+  KEY `id_admin` (`id_admin`),
+  KEY `id_user` (`id_user`),
+  CONSTRAINT `tb_prosedur_mutu_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`),
+  CONSTRAINT `tb_prosedur_mutu_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="tb_sop" view="colnames">
+<left>592</left>
+<top>371</top>
+<width>138</width>
+<height>214</height>
+<sql_create_table>CREATE TABLE `tb_sop` (
+  `id_sop` int(10) DEFAULT NULL,
+  `tgl_usulan` date DEFAULT NULL,
+  `nama_dokumen` varchar(50) DEFAULT NULL,
+  `unit_pengusul` varchar(50) DEFAULT NULL,
+  `file` varchar(50) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  `id_admin` int(10) DEFAULT NULL,
+  `id_user` int(10) DEFAULT NULL,
+  KEY `id_admin` (`id_admin`),
+  KEY `id_user` (`id_user`),
+  CONSTRAINT `tb_sop_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`),
+  CONSTRAINT `tb_sop_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="tb_user" view="colnames">
+<left>946</left>
+<top>242</top>
+<width>151</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `tb_user` (
+  `id_user` int(10) NOT NULL,
+  `nama_user` varchar(50) DEFAULT NULL,
+  `username_section` varchar(50) DEFAULT NULL,
+  `password_section` varchar(10) DEFAULT NULL,
+  `nama_department` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_user`),
+  CONSTRAINT `tb_user_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_mp` (`id_admin`),
+  CONSTRAINT `tb_user_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `tb_pedoman` (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
