@@ -7,7 +7,7 @@ header("content-disposition: attachment;filename=Report_Peraturan.xls");
 ?>
 
 <!-- Buat Menu Table saat di Export Ke Excel-->
-<center><h2>Rekap Catatan Mutu</h2></center>
+<center><h2>Rekap Peraturan</h2></center>
 <table border='1'>
 <h3>
 <thead><tr>
