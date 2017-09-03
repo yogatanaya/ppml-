@@ -133,7 +133,10 @@
 											//echo "<a href='download_document.php?file=".$file."' class='glyphicon glyphicon-download'></a> ";
 											?>
 					    				</li>
-					     
+					     				
+					     				<li>
+					           				<a href="edit_peraturan.php?id_peraturan=<?php echo $data['id_peraturan'];?>" class="glyphicon glyphicon-edit"></a>
+					           			</li>
 					           			<li>
 					           				<a href="delete_peraturan.php?id_peraturan=<?php echo $data['id_peraturan'];?>" onclick="return confirm('Yakin mau di hapus?');" class="glyphicon glyphicon-trash"></a>
 					           			</li>
@@ -180,8 +183,15 @@
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
 
-
-		}
-	</script>		
+	</script>
+<!-- cdn for modernizr, if you haven't included it already -->
+<script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+<!-- polyfiller file to detect and load polyfills -->
+<script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+<script>
+  webshims.setOptions('waitReady', false);
+  webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.polyfill('forms forms-ext');
+</script>		
 </body>
 </html>
