@@ -110,7 +110,7 @@ if(isset($_POST['submit'])){
 	$password = $_POST['password'];
 	
 	if($unit==1){
-		$query1 = "INSERT into tb_admin (nama_admin, unit, username, password, date_user, tipe) values ('$nama_admin','$unit', '$username', '$password','NOW()',0)";
+		$query1 = "INSERT into tb_admin (nama_admin, unit, username, password, date_user, tipe) values ('$nama_admin','$unit', '$username', '$password',NOW(),0)";
 		$result1=mysql_query($query1);
 
 		if ($result1) {
@@ -121,7 +121,7 @@ if(isset($_POST['submit'])){
 	}
 
 	else{
-		$query2 = "INSERT into tb_admin (nama_admin, unit, username, password, date_user, tipe) values ('$nama_admin','$unit', '$username', '$password','NOW()',1)";
+		$query2 = "INSERT into tb_admin (nama_admin, unit, username, password, date_user, tipe) values ('$nama_admin','$unit', '$username', '$password',NOW(),1)";
 		$result2=mysql_query($query2);
 
 		if ($result2) {
