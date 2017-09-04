@@ -209,7 +209,7 @@ if(isset($_POST['update'])){
 	$nama_dokumen = $_POST['nama_dokumen'];
 	$jenis_dokumen = $_POST['jenis_dokumen'];
 	$status = $_POST['status'];
-	$catatan=implode(',',$_POST['catatan']);
+	$catatan=implode('<br>',$_POST['catatan']);
 	$keterangan = $_POST['keterangan'];
 	$revisi=$_POST['revisi'];
 
