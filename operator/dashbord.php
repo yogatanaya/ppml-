@@ -91,6 +91,7 @@
                                 <th data-field="unit">Unit Terkait</th>
                                 <th data-field="status_dokumen">Status</th>
                                 <th data-field="keterangan">Keterangan</th>
+                                <th data-field="catatan">Catatan</th>
                                 
                                 <th colspan="1">Opsi</th>                           
                             </tr>
@@ -101,6 +102,7 @@
                             tb_jenis_dokumen.jenis_dokumen,
                             tb_dokumen_baru.id_dokumen,
                             tb_dokumen_baru.nama_dokumen,
+                            tb_dokumen_baru.catatan,
                             tb_dokumen_baru.keterangan,
                             tb_dokumen_baru.`file`,
                             status_dokumen.status_dokumen,
@@ -128,7 +130,7 @@
                                 <td><?php echo $data['unit']; ?></td> 
                                 <td><?php echo $data['status_dokumen']; ?></td>         
                                 <td><?php echo $data['keterangan']; ?></td> 
-                           
+                                <td><?php echo $data['catatan']; ?></td> 
                                 
                                 <td>
                                     <ul>
