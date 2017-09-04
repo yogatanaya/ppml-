@@ -174,7 +174,7 @@ if(isset($_POST['submit'])){
 	$nama_dokumen = $_POST['nama_dokumen'];
 	$judul=$_POST['judul'];
 	$jenis_dokumen = $_POST['jenis_dokumen'];
-	$catatan=implode(',',$_POST['catatan']);
+	$catatan=implode('<br>',$_POST['catatan']);
 	
 
 	//upload file
