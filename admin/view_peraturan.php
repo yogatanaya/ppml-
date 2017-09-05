@@ -82,8 +82,8 @@
 						        <th data-field="regulator"  data-sortable="true">Regulator</th>
 						        <th data-field="unit"  data-sortable="true">Unit Terkait</th>
 						        <th data-field="nama_admin"  data-sortable="true">Penanggung Jawab</th>
-						         <th data-field="entry_date"  data-sortable="true">Waktu</th>
-						         <th data-field="masa_berlaku"  data-sortable="true">Masa Berlaku</th>
+						        <th data-field="entry_date"  data-sortable="true">Waktu</th>
+						        <th data-field="masa_berlaku"  data-sortable="true">Tanggal Terbit</th>
 						        <th colspan="1">Opsi</th>					        
 						    </tr>
 						    </thead>
