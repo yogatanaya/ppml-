@@ -153,35 +153,7 @@ include 'sidebar.php';
 									</div>
 								</div>
 
-								<hr>
-								<!--catatan mutu-->
-								<?php
-								include "config.php";
-								error_reporting(0);
-								$hasil=mysql_query("SELECT * FROM catatan_mutu"); 
-							  	?>
-								<div class="form-group">
-									<label class="col-md-3 control-label" for="catatan">Catatan</label>
-									<div class="col-md-6">
-									<select class="form-control" multiple="multiple" name="catatan[]">
-										
-							  			<?php
-							    		while ($baris = mysql_fetch_array($hasil)){
-							      		?>
-							      		<option value="<?php echo $baris[judul];?>"><?php echo $baris[judul];?></option>
-							      		<?php
-							    		}
-							     		?>
-									</select>
-									</div>
-								</div>
-
-								<!-- Tombol tambah catatan -->
-								<div class="form-group">
-									<div class="col-md-12 widget-right">
-										<a href="add_catatan.php" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
-									</div>
-								</div>
+							
 
 							</fieldset>
 						</form>
@@ -229,7 +201,7 @@ if(isset($_POST['update'])){
 	$nama_dokumen = $_POST['nama_dokumen'];
 	$jenis_dokumen = $_POST['jenis_dokumen'];
 	$status = $_POST['status'];
-	$catatan=implode('<br>',$_POST['catatan']);
+	//$catatan=implode('<br>',$_POST['catatan']);
 	$kode=$_POST['kode'];
 	$keterangan = $_POST['keterangan'];
 	$revisi=$_POST['revisi'];
@@ -252,7 +224,6 @@ if(isset($_POST['update'])){
 		SET nama_dokumen='$nama_dokumen',
 		jenis_dokumen='$jenis_dokumen',
 		status='$status',
-		catatan='$catatan',
 		kode='$kode',
 		revisi='$revisi',
 		keterangan='$keterangan',

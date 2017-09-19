@@ -74,6 +74,7 @@
 
 						    <thead>
 						    <tr>
+						    	<th align="center">No.</th>
 						    	<th data-field="kode">Kode</th>
 						    	<th data-field="jenis_dokumen">Jenis</th>
 						    	<th data-field="nama_dokumen">Judul</th>
@@ -116,9 +117,11 @@
 							order by id_dokumen desc 
 							
 							");
+							$no=1;
 						    while ($data = mysql_fetch_array($query)) {
 					    	?>
 					        <tr>
+					        	<td align="center"><?php echo $no;?></td>
 					        	<td><?php echo $data['kode']; ?></td>
 					        	<td><?php echo $data['jenis_dokumen']; ?></td>
 					           	<td><?php echo $data['nama_dokumen']; ?></td>
@@ -154,7 +157,7 @@
 					        </tr>  
 
 						    <?php
-						    
+						    $no++;
 						 
 						    }
 						    ?>

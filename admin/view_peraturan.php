@@ -76,6 +76,7 @@
 						<table data-toggle="table"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
+						    	<th align="center">No.</th>
 						    	<th data-field="nomer"  data-sortable="true">Nomor</th>
 						    	<th data-field="judul"  data-sortable="true">Judul</th>
 						    	<th data-field="tahun"  data-sortable="true">Tahun</th>
@@ -113,9 +114,11 @@
 							".$filter."
 							order by id_peraturan desc
 							");
+							$no=1;
 						    while ($data = mysql_fetch_array($query)) {
 					    	?>
 					        <tr>
+					        	<td align="center"><?php echo $no; ?></td>
 					        	<td><?php echo $data['nomer']; ?></td>
 					        	<td><?php echo $data['judul']; ?></td>
 					           	<td><?php echo $data['tahun']; ?></td>         
@@ -146,7 +149,7 @@
 					    		</td>
 
 					    	<?php
-						    
+						    $no++;
 						  
 						    }
 						    ?>

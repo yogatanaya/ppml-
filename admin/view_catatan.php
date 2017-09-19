@@ -39,6 +39,7 @@ require_once 'sidebar.php';
 			<table data-toggle="table"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 				<thead>
 					<tr>
+					<th align="center">No.</th>
 					<th data-field="judul">Judul</th>
 					<th data-field="status_cm">Status</th>
 					<th data-field="masa_simpan">Masa Berlaku</th>
@@ -71,9 +72,11 @@ require_once 'sidebar.php';
 				Inner Join metode ON catatan_mutu.id_metode = metode.id_metode
 				order by id_catatan desc 
 				");
+				$no=1;
 				while ($data = mysql_fetch_array($query)) {
 					    	?>
 					        <tr>
+					        	<td><?php echo $no; ?></td>
 					        	<td><?php echo $data['judul']; ?></td>
 					           	<td><?php echo $data['status_cm']; ?></td>
 					           	<td><?php echo $data['masa_berlaku']; ?></td> 
@@ -102,6 +105,7 @@ require_once 'sidebar.php';
 					    		</td>
 					        </tr>  
 						    <?php
+						    $no++;
 						    }
 						    ?>
 					  		</tbody>
