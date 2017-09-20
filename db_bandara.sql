@@ -1,6 +1,6 @@
 /*
-SQLyog Trial v11.31 (32 bit)
-MySQL - 10.1.19-MariaDB : Database - db_bandara
+SQLyog Ultimate v12.09 (64 bit)
+MySQL - 10.1.25-MariaDB : Database - db_bandara
 *********************************************************************
 */
 
@@ -38,11 +38,11 @@ CREATE TABLE `catatan_mutu` (
   CONSTRAINT `catatan_mutu_ibfk_2` FOREIGN KEY (`id_metode`) REFERENCES `metode` (`id_metode`),
   CONSTRAINT `catatan_mutu_ibfk_3` FOREIGN KEY (`status_cm`) REFERENCES `status_cm` (`id_status_cm`),
   CONSTRAINT `catatan_mutu_ibfk_4` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `catatan_mutu` */
 
-insert  into `catatan_mutu`(`id_catatan`,`judul`,`status_cm`,`masa_berlaku`,`lokasi_simpan`,`file`,`keterangan`,`entry_date`,`id_metode`,`id_admin`) values (3,'catatan 1',1,'2017-08-31','ruang arsip','Appendix B - Indemnity Form -general-version_pg17.doc','','2017-08-31 14:34:46',1,7),(4,'catatan 2',1,'2017-09-06','ruang arsip','Table of Contents.docx','','2017-08-31 14:35:57',1,7),(5,'catatan 3 ',1,'2017-08-30','ruang arsip','English.docx','','2017-08-31 16:20:51',2,7),(6,'catatan 4',1,'2017-09-30','ruang arsip','How to prevent us from cyber criminal.docx','','2017-09-01 19:07:59',1,7),(7,'catatan 5',2,'2017-09-30','ruang arsip','8563461.jpg','','2017-09-01 19:08:22',2,7);
+insert  into `catatan_mutu`(`id_catatan`,`judul`,`status_cm`,`masa_berlaku`,`lokasi_simpan`,`file`,`keterangan`,`entry_date`,`id_metode`,`id_admin`) values (8,'cm1',1,'2017-09-20','ruang arsip','35904-ch05_case01.doc','','2017-09-19 18:42:00',1,7),(9,'cm2',1,'2017-09-20','ruang arsip','51228-baca dulu.txt','','2017-09-19 18:46:35',1,7),(10,'cm3',1,'2017-09-21','ruang arsip','32871-SKEP-2770-XII-2010.pdf','','2017-09-19 18:56:51',2,7);
 
 /*Table structure for table `metode` */
 
@@ -130,11 +130,11 @@ CREATE TABLE `tb_admin` (
   KEY `unit` (`unit`),
   KEY `id_admin` (`id_admin`),
   CONSTRAINT `tb_admin_ibfk_1` FOREIGN KEY (`unit`) REFERENCES `unit` (`id_unit`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_admin` */
 
-insert  into `tb_admin`(`id_admin`,`nama_admin`,`unit`,`username`,`password`,`date_user`,`tipe`) values (7,'yogapermana',1,'yogapermana','123','2017-08-16 09:03:27',0),(8,'yudhypratama',2,'yudhypratama55','567','2017-08-16 09:04:01',1),(9,'savioroomy',3,'roomy.mendes123','fretelin','2017-08-16 09:04:31',1),(32,'Ibnu',2,'ibnu','ibnu','0000-00-00 00:00:00',1),(33,'Rizki Saputra',2,'rizki123','rizki','0000-00-00 00:00:00',1);
+insert  into `tb_admin`(`id_admin`,`nama_admin`,`unit`,`username`,`password`,`date_user`,`tipe`) values (7,'yogapermana',1,'yogapermana','123','2017-08-16 09:03:27',0),(8,'yudhypratama',2,'yudhypratama55','567','2017-08-16 09:04:01',1),(9,'savioroomy',3,'roomy.mendes123','fretelin','2017-08-16 09:04:31',1),(32,'Ibnu',2,'ibnu','ibnu','0000-00-00 00:00:00',1),(33,'Rizki Saputra',2,'rizki123','rizki','0000-00-00 00:00:00',1),(34,'Eka Artha Putra',1,'ekaarthaputra','eka','2017-09-19 19:13:48',0);
 
 /*Table structure for table `tb_dokumen_baru` */
 
@@ -162,11 +162,11 @@ CREATE TABLE `tb_dokumen_baru` (
   CONSTRAINT `tb_dokumen_baru_ibfk_7` FOREIGN KEY (`status`) REFERENCES `status_dokumen` (`id_status_dokumen`),
   CONSTRAINT `tb_dokumen_baru_ibfk_8` FOREIGN KEY (`revisi`) REFERENCES `revisi` (`id_revisi`),
   CONSTRAINT `tb_dokumen_baru_ibfk_9` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_dokumen_baru` */
 
-insert  into `tb_dokumen_baru`(`id_dokumen`,`kode`,`nama_dokumen`,`jenis_dokumen`,`keterangan`,`revisi`,`file`,`status`,`catatan`,`entry_date`,`id_admin`) values (18,'I01','pemeliharaan Xray',1,'',1,'Assessment Details (Degree)_pg11_15.docx',1,'catatan 1,catatan 2','2017-09-01 17:42:22',7);
+insert  into `tb_dokumen_baru`(`id_dokumen`,`kode`,`nama_dokumen`,`jenis_dokumen`,`keterangan`,`revisi`,`file`,`status`,`catatan`,`entry_date`,`id_admin`) values (20,'p01','pedoman',3,'q',0,'12927-DummyDocument.docx',2,'cm1<br>cm2','2017-09-19 19:04:14',7);
 
 /*Table structure for table `tb_jenis_dokumen` */
 
@@ -220,8 +220,6 @@ CREATE TABLE `tb_peraturan` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_peraturan` */
-
-insert  into `tb_peraturan`(`id_peraturan`,`nomer`,`judul`,`tahun`,`regulator`,`file`,`entry_date`,`masa_berlaku`,`id_admin`) values (1,4,'Peraturan Baru OTBAN ',2017,1,'ENGLISH.pptx','2017-08-28 10:27:19','2018-07-31',8),(2,4,'Peraturan Baru OTBAN ',2017,1,'Table of Contents.docx','2017-08-29 15:04:34','2017-08-30',8);
 
 /*Table structure for table `unit` */
 
