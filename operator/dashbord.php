@@ -29,7 +29,7 @@
                             <svg class="glyph stroked heart"><use xlink:href="#stroked-heart"/></svg>
                         </div>
                         <div class="col-sm-9 col-lg-7 widget-right">
-                            <div class="medium"><li><a href="add_catatan.php">Ext.</li></div>
+                            <div class="medium"><li><a href="add_catatan.php">Catatan</li></div>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             <svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg>
                         </div>
                         <div class="col-sm-9 col-lg-7 widget-right">
-                            <div class="medium"><li><a href="view_document.php">Internal</a></li></div>
+                            <div class="medium"><li><a href="view_document.php">Dokumen Unit</a></li></div>
                         </div>
                     </div>
                 </div>
